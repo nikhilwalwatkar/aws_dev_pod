@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node js' // Use the tool name you configured in Jenkins
+        nodejs 'node' // Use the tool name you configured in Jenkins
     }
     environment {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
@@ -10,7 +10,7 @@ pipeline {
         stage('Install Dependency') {
             steps {
                 script {
-                    sh 'npm install'
+                    cmd 'npm install'
                    
                 }
             }
