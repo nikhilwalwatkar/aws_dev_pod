@@ -5,7 +5,6 @@ pipeline {
     }
     environment {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
-        NPM_CONFIG_CACHE = "hello_project/.npm"
     }
     stages {
         stage('Install Dependency') {
