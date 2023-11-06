@@ -25,14 +25,14 @@ pipeline {
         stage('Build Application') {
             steps {
                 script {
-                    echo "tesing"
+                    sh "npm rub build"
                 }
             }
         }
         stage('Create Docker Image') {
             steps {
                 script {
-                    echo 'docker build -t a .'
+                    sh 'docker build -t a .'
                 }
             }
         }
