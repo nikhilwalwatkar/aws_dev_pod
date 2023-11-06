@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         // nodejs 'node js' // Use the tool name you configured in Jenkins
-        nodejs 'node'
+        nodejs 'node js'
     }
     environment {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
@@ -11,8 +11,8 @@ pipeline {
         stage('Install Dependency') {
             steps {
                 script {
-                    // sh 'npm install'
-                    bat 'npm install'
+                    sh 'npm install'
+                    // bat 'npm install'
                    
                 }
             }
@@ -27,15 +27,16 @@ pipeline {
         stage('Build Application') {
             steps {
                 script {
-                    // sh "npm run build"
-                    bat 'npm run build'
+                    sh "npm run build"
+                    // bat 'npm run build'
                 }
             }
         }
         stage('Create Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t a .'
+                    // sh 'docker build -t a .'
+                    echo 'building docker image'
                 }
             }
         }
