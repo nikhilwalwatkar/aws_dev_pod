@@ -25,7 +25,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 script {
-                    sh "npm rub build"
+                    sh "npm run build"
                 }
             }
         }
