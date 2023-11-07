@@ -31,15 +31,15 @@ pipeline {
                 script {
                     echo "npm run build"
                     // bat 'npm run build'
-                    // sh 'npm run build'
+                    sh 'npm run build'
                 }
             }
         }
         stage('Create Docker Image') {
             steps {
                 script {
-                    // sh 'docker build -t a .'
                     echo 'building docker image'
+                    sh 'docker build -t a .'
                 }
             }
         }
