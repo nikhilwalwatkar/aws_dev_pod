@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         // nodejs 'node js' // Use the tool name you configured in Jenkins
-        nodejs 'node'
+        nodejs 'node js'
     }
     environment {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
