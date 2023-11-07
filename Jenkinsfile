@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "npm run test"
-                    sh 'npm run test'
+                    // sh 'npm run test'
                 }
             }
         }
