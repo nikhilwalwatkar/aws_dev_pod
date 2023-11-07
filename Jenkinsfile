@@ -8,13 +8,22 @@ pipeline {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
     }
     stages {
-        stage('Install Dependency') {
+        // stage('Install Dependency') {
+        //     steps {
+        //         script {
+        //             echo 'npm install'
+        //             // bat 'npm install'
+        //             sh 'npm install'
+                   
+        //         }
+        //     }
+        // }
+        
+        stage('Create Docker Image') {
             steps {
                 script {
-                    echo 'npm install'
-                    // bat 'npm install'
-                    sh 'npm install'
-                   
+                    echo 'building docker image'
+                    sh 'docker build -t a .'
                 }
             }
         }
@@ -23,23 +32,6 @@ pipeline {
                 script {
                     echo "npm run test"
                     sh 'npm run test'
-                }
-            }
-        }
-        stage('Build Application') {
-            steps {
-                script {
-                    echo "npm run build"
-                    // bat 'npm run build'
-                    // sh 'npm run build'
-                }
-            }
-        }
-        stage('Create Docker Image') {
-            steps {
-                script {
-                    echo 'building docker image'
-                    sh 'docker build -t a .'
                 }
             }
         }
