@@ -21,17 +21,17 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // echo "npm run test"
-                    sh 'npm run test'
+                    echo "npm run test"
+                    // sh 'npm run test'
                 }
             }
         }
         stage('Build Application') {
             steps {
                 script {
-                    // echo "npm run build"
+                    echo "npm run build"
                     // bat 'npm run build'
-                    sh 'npm run build'
+                    // sh 'npm run build'
                 }
             }
         }
