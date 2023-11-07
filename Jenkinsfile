@@ -13,7 +13,7 @@ pipeline {
         //         script {
         //             echo 'npm install'
         //             // bat 'npm install'
-        //             sh 'npm install'
+        //             bat 'npm install'
                    
         //         }
         //     }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     echo 'building docker image'
-                    sh 'docker build -t a .'
+                    bat 'docker build -t a .'
                 }
             }
         }
