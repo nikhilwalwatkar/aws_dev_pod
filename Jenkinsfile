@@ -23,15 +23,15 @@ pipeline {
             steps {
                 script {
                     echo 'building docker image'
-                    bat 'docker build -t a .'
+                    sh 'docker build -t a .'
                 }
             }
         }
         stage('Run Tests') {
             steps {
                 script {
-                    echo "npm run test"
-                    // sh 'npm run test'
+                    // echo "npm run test"
+                    sh 'npm run test'
                 }
             }
         }
@@ -39,9 +39,9 @@ pipeline {
             steps {
                 script {
                     withEnv (["AWS_ACCESS_KEY_ID=${env.Access_key_ID}", "AWS_SECRET_ACCESS_KEY=${env.Secret_access_key}", "AWS_DEFAULT_REGION=${env.aws_region}"]){
-                    bat 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 405255119935.dkr.ecr.ap-south-1.amazonaws.com'
-                    bat 'docker tag a:latest 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
-                    bat 'docker push 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
+                    sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 405255119935.dkr.ecr.ap-south-1.amazonaws.com'
+                    sh 'docker tag a:latest 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
+                    sh 'docker push 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
                     }
                     echo "pushing image to ecr"
                     }
