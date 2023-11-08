@@ -40,7 +40,7 @@ pipeline {
                 script {
                     echo 'building docker image'
                     sh 'docker build -t a .'
-                    sh'docker run -e CI=true a npm run test'
+                    sh 'docker run -e CI=true a npm test'
                 }
             }
         }
