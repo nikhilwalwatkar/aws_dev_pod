@@ -7,8 +7,6 @@ COPY package*.json ./
 
 # Install Node.js dependencies
 RUN npm install
-RUN npm run build
-
 
 # Copy the rest of your application source code to the container
 COPY . .
