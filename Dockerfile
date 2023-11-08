@@ -8,6 +8,8 @@ COPY package*.json ./
 
 # Install Node.js dependencies
 RUN npm install
+
+# Run npm test
 RUN npm test
 
 # Copy the rest of your application source code to the container
@@ -18,6 +20,3 @@ EXPOSE 3000
 
 # Define the command to run your application
 CMD ["npm", "start"]
-
-# Add a new command to run npm test after npm install
-CMD ["npm", "test"]
