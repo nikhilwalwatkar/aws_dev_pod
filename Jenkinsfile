@@ -18,14 +18,14 @@ pipeline {
         //         }
         //     }
         // }
-        // stage('Run Tests') {
-        //     steps {
-        //         script {
-        //             echo "npm run test"
-        //             sh 'src/jenkins/scripts/testscript.sh'
-        //         }
-        //     }
-        // }
+        stage('Run Tests') {
+            steps {
+                script {
+                    echo "npm run test"
+                    sh 'npm run test'
+                }
+            }
+        }
         
         // stage('Build Application') {
         //     steps {
@@ -45,14 +45,14 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests') {
-            steps {
-                script {
-                    echo "npm run test"
-                    sh 'npm run test'
-                }
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         script {
+        //             echo "npm run test"
+        //             sh 'npm run test'
+        //         }
+        //     }
+        // }
 
 
         stage('Pushing image to ECR') {
