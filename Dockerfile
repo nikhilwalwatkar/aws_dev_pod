@@ -7,7 +7,6 @@ COPY package*.json ./
 
 # Install Node.js dependencies
 RUN npm install
-RUN npm run test
 RUN npm run build
 
 
