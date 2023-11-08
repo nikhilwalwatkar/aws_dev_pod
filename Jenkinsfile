@@ -35,6 +35,14 @@ pipeline {
                 }
             }
         }
+        stage('Run build') {
+            steps {
+                script {
+                    // echo "npm run test"
+                    sh 'npm run build'
+                }
+            }
+        }
         stage('Pushing image to ECR') {
             steps {
                 script {
