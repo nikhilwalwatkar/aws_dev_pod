@@ -8,16 +8,24 @@ pipeline {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
     }
     stages {
-        // stage('Install Dependency') {
-        //     steps {
-        //         script {
-        //             echo 'npm install'
-        //             // bat 'npm install'
-        //             // sh 'npm install'
+        stage('Install Dependency') {
+            steps {
+                script {
+                    echo 'npm install'
+                    // bat 'npm install'
+                    sh 'npm install'
                    
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                script {
+                    echo "npm run test"
+                    sh 'npm run test'
+                }
+            }
+        }
         
         // stage('Build Application') {
         //     steps {
@@ -37,14 +45,7 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests') {
-            steps {
-                script {
-                    echo "npm run test"
-                    sh 'npm test'
-                }
-            }
-        }
+
         stage('Pushing image to ECR') {
             steps {
                 script {
