@@ -13,7 +13,7 @@ pipeline {
                 script {
                     echo 'npm install'
                     // bat 'npm install'
-                    sh 'npm install'
+                    // sh 'npm install'
                    
                 }
             }
