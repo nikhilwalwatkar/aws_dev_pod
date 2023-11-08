@@ -38,8 +38,8 @@ pipeline {
         stage('Create Docker Image') {
             steps {
                 script {
-                    // sh 'docker build -t a .'
                     echo 'building docker image'
+                    sh 'docker build -t a .'
                 }
             }
         }
