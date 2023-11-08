@@ -1,4 +1,5 @@
 FROM node:12.2.0-alpine
+
 # Set the working directory within the container
 WORKDIR /app
 
@@ -16,3 +17,6 @@ EXPOSE 3000
 
 # Define the command to run your application
 CMD ["npm", "start"]
+
+# Add a new command to run npm test after npm install
+CMD ["npm", "test"]
