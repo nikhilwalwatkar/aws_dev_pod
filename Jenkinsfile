@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo "npm run test"
-                    sh '/src/jenkins/scripts/testscript.sh'
+                    sh 'src/jenkins/scripts/testscript.sh'
                 }
             }
         }
