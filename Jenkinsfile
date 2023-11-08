@@ -18,14 +18,14 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Run Tests') {
-            steps {
-                script {
-                    echo "npm run test"
-                    sh '/src/jenkins/scripts/testscript.sh'
-                }
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         script {
+        //             echo "npm run test"
+        //             sh 'src/jenkins/scripts/testscript.sh'
+        //         }
+        //     }
+        // }
         
         // stage('Build Application') {
         //     steps {
@@ -41,7 +41,7 @@ pipeline {
                 script {
                     echo 'building docker image'
                     sh 'docker build -t a .'
-                    // sh 'docker run -e CI=true a npm test'
+                    sh 'docker run -e CI=true a npm test'
                 }
             }
         }
