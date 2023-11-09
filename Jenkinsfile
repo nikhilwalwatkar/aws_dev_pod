@@ -8,24 +8,24 @@ pipeline {
         registry = "405255119935.dkr.ecr.ap-south-1.amazonaws.com"
     }
     stages {
-        // stage('Install Dependency') {
-        //     steps {
-        //         script {
-        //             echo 'npm install'
-        //             // bat 'npm install'
-        //             sh 'npm install'
+        stage('Install Dependency') {
+            steps {
+                script {
+                    echo 'npm install'
+                    // bat 'npm install'
+                    sh 'npm install'
                    
-        //         }
-        //     }
-        // }
-        // stage('Run Tests') {
-        //     steps {
-        //         script {
-        //             echo "npm run test"
-        //             sh 'npm run test'
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                script {
+                    echo "npm run test"
+                    sh 'npm run test'
+                }
+            }
+        }
         
         // stage('Build Application') {
         //     steps {
@@ -36,23 +36,23 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Create Docker Image') {
-            steps {
-                script {
-                    echo 'building docker image'
-                    sh 'docker build -t a .'
-                    // sh 'docker run -e CI=true a npm test'
-                }
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                script {
-                    echo "npm run test"
-                    sh './src/jenkins/scripts/testscript.sh'
-                }
-            }
-        }
+        // stage('Create Docker Image') {
+        //     steps {
+        //         script {
+        //             echo 'building docker image'
+        //             sh 'docker build -t a .'
+        //             // sh 'docker run -e CI=true a npm test'
+        //         }
+        //     }
+        // }
+        // stage('Run Tests') {
+        //     steps {
+        //         script {
+        //             echo "npm run test"
+        //             sh './src/jenkins/scripts/testscript.sh'
+        //         }
+        //     }
+        // }
 
 
         stage('Pushing image to ECR') {
