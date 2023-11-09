@@ -41,7 +41,6 @@ pipeline {
                 script {
                     echo 'building docker image'
                     sh 'docker build -t test_app .'
-                    sh 'docker rmi test_app'
                     // sh 'docker run -e CI=true a npm test'
                 }
             }
@@ -63,6 +62,7 @@ pipeline {
                     sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 405255119935.dkr.ecr.ap-south-1.amazonaws.com'
                     sh 'docker tag test_app:latest 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
                     sh 'docker push 405255119935.dkr.ecr.ap-south-1.amazonaws.com/react_devops:latest'
+                    sh 'docker rmi test_app'
                     }
                     echo "image pushed to ecr :)"
                     }
