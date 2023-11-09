@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     echo "npm run test"
-                    sh './jenkins/scripts/testscript.sh'
+                    sh './src/jenkins/scripts/testscript.sh'
                 }
             }
         }
