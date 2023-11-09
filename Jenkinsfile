@@ -36,15 +36,15 @@ pipeline {
         //         }
         //     }
         // }
-        // stage('Create Docker Image') {
-        //     steps {
-        //         script {
-        //             echo 'building docker image'
-        //             sh 'docker build -t a .'
-        //             // sh 'docker run -e CI=true a npm test'
-        //         }
-        //     }
-        // }
+        stage('Create Docker Image') {
+            steps {
+                script {
+                    echo 'building docker image'
+                    sh 'docker build -t a .'
+                    // sh 'docker run -e CI=true a npm test'
+                }
+            }
+        }
         // stage('Run Tests') {
         //     steps {
         //         script {
