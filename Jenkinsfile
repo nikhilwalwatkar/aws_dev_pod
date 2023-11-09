@@ -41,6 +41,7 @@ pipeline {
                 script {
                     echo 'building docker image'
                     sh 'docker build -t test_app .'
+                    sh 'docker rmi test_app'
                     // sh 'docker run -e CI=true a npm test'
                 }
             }
